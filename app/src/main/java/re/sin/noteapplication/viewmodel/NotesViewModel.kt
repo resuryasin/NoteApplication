@@ -12,7 +12,7 @@ import re.sin.noteapplication.entities.Notes
 
 class NotesViewModel(application: Application) :AndroidViewModel(application) {
     val allNotes : LiveData<List<Notes>>
-    val repository : NotesRepository
+    private val repository : NotesRepository
 
     init {
         val dao = NotesDatabase.getDatabase(application).getNotesDao()
