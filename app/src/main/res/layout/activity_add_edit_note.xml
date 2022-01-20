@@ -1,39 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black_shade_1"
         tools:context=".AddEditNoteActivity">
 
-    <!--edit text for note title-->
     <EditText
             android:id="@+id/idEdtNoteName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:hint="Enter Note Title"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/idEdtNoteDesc"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:importantForAutofill="no"/>
 
     <!--edit text for note description-->
     <EditText
             android:id="@+id/idEdtNoteDesc"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_above="@id/idBtn"
             android:layout_below="@id/idEdtNoteName"
             android:layout_margin="10dp"
-            android:background="@color/black_shade_1"
             android:gravity="start|top"
             android:hint="Enter your Note Details"
             android:inputType="textMultiLine"
             android:singleLine="false"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/idEdtNoteName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/idBtn"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:importantForAutofill="no"/>
 
-    <!--button for saving and updating a note-->
     <Button
             android:id="@+id/idBtn"
             android:layout_width="match_parent"
@@ -42,6 +59,13 @@
             android:layout_margin="20dp"
             android:text="Button"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/idEdtNoteDesc"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/idEdtNoteDesc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/idEdtNoteDesc"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
