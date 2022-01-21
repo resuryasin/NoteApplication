@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity(), NotesRVAdapter.NotesClickInterface, No
             startActivity(Intent(this@MainActivity, AddEditNoteActivity::class.java))
             this.finish()
         }
+        binding.idFABDummy.setOnClickListener {
+            startActivity(Intent(this@MainActivity, MainTabActivity::class.java))
+            this.finish()
+        }
     }
 
     override fun onNoteClick(notes: Notes) {
